@@ -3,13 +3,13 @@
     <div class="header">
       <div class="logo">
         <router-link to="/">
-          <img class="logo" src="src/assets/images/logo.svg" />
+          <img class="logo" src="/src/assets/images/logo.svg" alt="logo"/>
         </router-link>
       </div>
       <div class="cart">
         <router-link to="/cart">
           <div class="cart_btn">
-            <img src="src/assets/images/cart.svg" />
+            <img src="/src/assets/images/cart.svg" alt="cart"/>
             <span>Корзина</span>
           </div>
         </router-link>
