@@ -36,9 +36,6 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
 h1 {
@@ -70,10 +67,10 @@ button:focus-visible {
 }
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (prefers-color-scheme: light) {
@@ -87,4 +84,28 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+@font-face {
+  font-family: 'CoFo Sans';
+  src: url('/static/font/CoFoSans-Black.eot');
+  src: local('CoFo Sans Black'), local('CoFoSans-Black'),
+  url('/static/font/CoFoSans-Black.eot?#iefix') format('embedded-opentype'),
+  url('/static/font/CoFoSans-Black.woff2') format('woff2'),
+  url('/static/font/CoFoSans-Black.woff') format('woff'),
+  url('/static/font/CoFoSans-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CoFo Sans';
+  src: url('/static/font/CoFoSans-Regular.eot');
+  src: local('CoFo Sans'), local('CoFoSans-Regular'),
+  url('/static/font/CoFoSans-Regular.eot?#iefix') format('embedded-opentype'),
+  url('/static/font/CoFoSans-Regular.woff2') format('woff2'),
+  url('/static/font/CoFoSans-Regular.woff') format('woff'),
+  url('/static/font/CoFoSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }

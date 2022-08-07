@@ -1,14 +1,25 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { createRouter, createWebHistory } from 'vue-router'
-import './style.css'
+
+import './assets/styles/style.css'
+
 import App from './App.vue'
+import Catalog from "./components/Catalog.vue";
+import Cart from "./components/Cart.vue";
 
 const pinia = createPinia()
 const app = createApp(App)
 const router = createRouter({
   history: createWebHistory(),
-  routes: [], //Тут будут роуты
+  routes: [
+    {
+      path: '/', component: Catalog
+    },
+    {
+      path: '/cart', component: Cart
+    }
+  ],
 })
 
 app.use(pinia)

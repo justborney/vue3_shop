@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <h1>Основа. База.</h1>
-  </div>
-
+  <main-wrapper />
 </template>
 
 <script>

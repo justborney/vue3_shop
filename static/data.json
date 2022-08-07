@@ -1,0 +1,50 @@
+[
+  {
+    "image": "https://i.pinimg.com/564x/b9/62/58/b9625805af6d194a423d664a86bfaaf4.jpg",
+    "name": "Футболка 1",
+    "brand": "DeFacto",
+    "price": 2100,
+    "article": "0001",
+    "available": 10
+  },
+  {
+    "image": "https://i.pinimg.com/564x/b9/62/58/b9625805af6d194a423d664a86bfaaf4.jpg",
+    "name": "Футболка 2",
+    "brand": "adidas Originals",
+    "price": 3150,
+    "article": "0002",
+    "available": 10
+  },
+  {
+    "image": "https://i.pinimg.com/564x/b9/62/58/b9625805af6d194a423d664a86bfaaf4.jpg",
+    "name": "Футболка 3",
+    "brand": "Tom Tailor",
+    "price": 4200,
+    "article": "0003",
+    "available": 10
+  },
+  {
+    "image": "https://i.pinimg.com/564x/b9/62/58/b9625805af6d194a423d664a86bfaaf4.jpg",
+    "name": "Футболка 4",
+    "brand": "Diesel",
+    "price": 5300,
+    "article": "0004",
+    "available": 10
+  },
+  {
+    "image": "https://i.pinimg.com/564x/b9/62/58/b9625805af6d194a423d664a86bfaaf4.jpg",
+    "name": "Футболка 5",
+    "brand": "PUMA",
+    "price": 6500,
+    "article": "0005",
+    "available": 10
+  },
+  {
+    "image": "https://i.pinimg.com/564x/b9/62/58/b9625805af6d194a423d664a86bfaaf4.jpg",
+    "name": "Футболка 6",
+    "brand": "oodji",
+    "price": 8700,
+    "article": "0006",
+    "available": 10
+  }
+]
