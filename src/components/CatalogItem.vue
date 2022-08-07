@@ -8,7 +8,7 @@
       <div class="product-description-wrap">
         <div class="product-brand">{{ product.brand }}</div>
         <div class="product-name">{{ product.name }}</div>
-        <button class="product-add-to-cart" aria-label="Добавить в корзину" @click="addToCart(product.article)"></button>
+        <button class="product-add-to-cart" @click="addToCart(product.article)">Добавить в корзину</button>
       </div>
     </div>
   </div>
