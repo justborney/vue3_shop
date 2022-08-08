@@ -4,12 +4,12 @@
     <div class="product-description">
       <div class="product-description-wrap">
         <div class="product-price">{{ formatPrice(product.price) }} ₽</div>
-      </div>
-      <div class="product-description-wrap">
-        <div class="product-brand">{{ product.brand }}</div>
-        <div class="product-name">{{ product.name }}</div>
         <button class="product-add-to-cart" @click="addToCart(product.article)">Добавить в корзину</button>
       </div>
+<!--      <div class="product-description-wrap">-->
+        <div class="product-brand">{{ product.brand }}</div>
+        <div class="product-name">{{ product.name }}</div>
+<!--      </div>-->
     </div>
   </div>
 </template>
@@ -44,7 +44,18 @@ export default {
 <style scoped>
 
 .product-add-to-cart {
-  width: 100%;
+  /*width: 100%;*/
+  font-family: 'CoFo Sans',serif;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 0.3em 0.6em;
+
+}
+
+.product-description-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .catalog-item {

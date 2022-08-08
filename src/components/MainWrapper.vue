@@ -10,7 +10,7 @@
         <router-link to="/cart">
           <div class="cart_btn">
             <img src="/src/assets/images/cart.svg" alt="cart"/>
-            <span>Корзина</span>
+            <span class="cart-text">Корзина</span>
           </div>
         </router-link>
       </div>
@@ -53,6 +53,9 @@ export default {
   gap: 5px;
   color: white;
   line-height: 24px;
+}
+.cart-text {
+  padding-top: 5px;
 }
 
 </style>
