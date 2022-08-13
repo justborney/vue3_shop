@@ -5,8 +5,16 @@
 </template>
 
 <script>
+import { useCartStore } from '../stores/cart.js';
+// useCartStore();
 export default {
-  name: "Cart"
+  name: "Cart",
+  setup() {
+    const store = useCartStore()
+    return {
+      store
+    }
+  }
 }
 </script>
 

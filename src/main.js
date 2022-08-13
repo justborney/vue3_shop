@@ -5,8 +5,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import './assets/styles/style.css'
 
 import App from './App.vue'
-import Catalog from "./components/Catalog.vue";
-import Cart from "./components/Cart.vue";
+import Catalog from './components/Catalog.vue';
+import Cart from './components/Cart.vue';
 
 const pinia = createPinia()
 const app = createApp(App)
