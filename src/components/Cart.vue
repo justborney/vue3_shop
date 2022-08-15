@@ -1,24 +1,52 @@
 <template>
   <div class="cart">
     <h3>Корзина товаров</h3>
-    <div></div>
+    <div class="products">
+      <div v-for="product in useStore.cart" :key="product.artilce" class="product">
+        <div>{{ product.article }}</div>
+        <div>{{ product.counter }}</div>
+        <button @click="deleteFromCart(product.article)">Удалить</button>
+      </div>
+    </div>
+    <div class="checkout" v-if="useStore.cart.length">
+      <cart-total />
+    </div>
+    <div v-else>Корзина пуста.</div>
   </div>
 </template>
 
 <script>
-import { useCartStore } from '../stores/cart.js';
-// useCartStore();
+import { useStore } from '../store.js';
+import CartTotal from './CartTotal.vue'
+
 export default {
   name: "Cart",
+
+  components: {
+    CartTotal
+  },
+
   setup() {
-    const store = useCartStore()
     return {
-      store
+      useStore: useStore()
+    }
+  },
+
+  methods: {
+    deleteFromCart(article) {
+      this.useStore.deleteFromCart(article)
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.products {
+  display: flex;
 
+  .product {
+    margin: 10px;
+    background-color: yellow;
+  }
+}
 </style>

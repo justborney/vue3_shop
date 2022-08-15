@@ -1,108 +1,108 @@
 <template>
-  <div class="catalog-item">
+  <div class="product">
     <div class="product-image" :style="`background-image: url(${product.image})`" />
     <div class="product-description">
       <div class="product-description-wrap">
-        <div class="product-price">{{ formatPrice(product.price) }} ₽</div>
-        <button class="product-add-to-cart" @click="addToCart(product.article)">Добавить в корзину</button>
+        <div class="product-price">{{ formatPrice }} ₽</div>
+        <button :class="['product-add-to-cart', { 'product-disable': disableBtn }]" @click="addToCart" >
+          {{ disableBtn ? 'Товар закончился' : 'Добавить в корзину' }}
+        </button>
+      
       </div>
-<!--      <div class="product-description-wrap">-->
-        <div class="product-brand">{{ product.brand }}</div>
-        <div class="product-name">{{ product.name }}</div>
-<!--      </div>-->
+      <div class="product-brand">{{ product.brand }}</div>
+      <div class="product-name">{{ product.name }}</div>
     </div>
   </div>
 </template>
 
 <script>
+import { useStore } from '../store.js';
 
 export default {
   name: "CatalogItem",
+  
+  setup() {
+    return {
+      useStore: useStore()
+    }
+  },
+
   props: {
     product: {
       type: Object,
     },
   },
-
-  methods: {
-    formatPrice(price) {
-      return new Intl.NumberFormat('ru-RU').format(price)
+  
+  computed: {
+    formatPrice() {
+      return new Intl.NumberFormat('ru-RU').format(this.product.price)
     },
 
-    addToCart(products) {
-      //TODO Добавление в корзину
+    disableBtn() {
+      const productInCart = this.useStore.cart.find(productInCart => productInCart.article === this.product.article)
+      return productInCart?.counter === this.product.available
     }
   },
 
-
+  methods: {
+    addToCart() {
+      if (this.disableBtn) return
+      this.useStore.addToCart(this.product.article)
+    }
+  }
 }
-
-
-
 </script>
 
-<style scoped>
-
-.product-add-to-cart {
-  /*width: 100%;*/
+<style lang="scss" scoped>
+.product {
   font-family: 'CoFo Sans',serif;
-  font-weight: 500;
   font-size: 13px;
-  padding: 0.3em 0.6em;
-
-}
-
-.product-description-wrap {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.catalog-item {
+  font-weight: 400;
   width: 240px;
   height: 410px;
   margin: 10px;
-}
+  
+  &-add-to-cart {
+    font-weight: 500;
+    padding: 0.3em 0.6em;
+  }
 
-.product-description {
-  padding-top: 8px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
+  &-description {
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    
+    &-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 
-.product-brand {
-  margin-top: 8px;
-}
+  &-brand {
+    margin-top: 8px;
+    line-height: 16px;
+  }
 
-.product-price {
-  font-family: 'CoFo Sans',serif;
-  font-weight: 700;
-  font-style: normal;
-  font-size: 16px;
-  line-height: 20px;
-}
+  &-price {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+  }
 
-.product-brand {
-  font-family: 'CoFo Sans',serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 13px;
-  line-height: 16px;
-}
+  &-name {
+    line-height: 16px;
+  }
 
-.product-name {
-  font-family: 'CoFo Sans', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 13px;
-  line-height: 16px;
-}
+  &-image {
+    height: 340px;
+    background-size: cover;
+  }
 
-.product-image {
-  /*width: 210px;*/
-  height: 340px;
-  background-size: cover;
+  &-disable {
+    background: gray;
+  }
 }
 
 </style>

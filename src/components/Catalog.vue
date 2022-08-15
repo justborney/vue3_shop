@@ -16,13 +16,13 @@
 
 <script>
 import catalogItem from "/src/components/CatalogItem.vue";
-import { useCartStore } from '../stores/cart.js';
+import { useStore } from '../store.js';
 
 
 export default {
   name: "Catalog",
   setup() {
-    const store = useCartStore()
+    const store = useStore()
     return {
       store
     }
