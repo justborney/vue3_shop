@@ -1,6 +1,7 @@
 <template>
   <div class="cart">
     <h3>Корзина товаров</h3>
+    <div></div>
   </div>
 </template>
 

@@ -6,7 +6,7 @@
     </div>
     <div class="catalog-list">
       <catalog-item
-        v-for="product in getProductsData"
+        v-for="product in store.productsData"
         :key="product.article"
         :product="product"
       />
@@ -15,15 +15,16 @@
 </template>
 
 <script>
-import productsData from "/static/data.json";
 import catalogItem from "/src/components/CatalogItem.vue";
+import { useCartStore } from '../stores/cart.js';
 
 
 export default {
   name: "Catalog",
-  computed: {
-    getProductsData() {
-      return productsData;
+  setup() {
+    const store = useCartStore()
+    return {
+      store
     }
   },
   components: {
